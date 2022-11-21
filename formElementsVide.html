@@ -85,25 +85,7 @@
         </fieldset>
         </form>
         <!-- DÉBUT DU SCRIPT -->
-        <script type="text/javascript">
-            "use strict";
-            function getName1() {
-                // Sélectionner l'élément input et retourner sa valeur
-                return document.getElementById("name1").value;
-                }
-            function displayName1(nom) {
-                document.getElementById("resultName1").value=nom;
-            }
-            function calcul1() {
-                var nom=getName1();
-                displayName1(nom);
-            }
-            // Événement
-            var boutonUn=document.getElementById("btn1");
-            // autre méthode :
-            // var boutonUn=document.querySelector("#btn1");
-            boutonUn.addEventListener("click", calcul1, false);
-        </script>
+        
         <!-- ZONE DE TEXTE ############################################### -->
     <h3>Texte multiligne : textarea</h3>
         <form action="">

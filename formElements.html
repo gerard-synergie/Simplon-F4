@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="date.updated" content="2022-04-21">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   
 <style type="text/css">
     /* CSS Document */
     /*######################################################"*/
@@ -11,7 +11,7 @@
     #avertnojs {
         font-size:1.2em;
         color:hsl(0,100%,47%);
-        text-align:center;
+        text-align:center; 
     }
     body {
         position:relative;
@@ -70,18 +70,18 @@
             <fieldset>
                 <legend>Récupérer une ligne de texte, l'affecter à une variable et l'afficher</legend>
                 <!-- CHAMPS LABEL ET INPUT -->
-                <label for="name11">Nom : </label>
-                <input type="text" id="name1" size="10" placeholder="Nom"/><br/>
+                <label for="name1">Nom : *</label>
+                <input type="text" id="name1" size="10"  placeholder="Nom" maxlength="5" required/><br/>
                 <!-- BOUTON DE CALCUL -->
                 <button type="button" id="btn1">
                     Calcul
-                </button>
+                </button> 
                       
                 <!-- BOUTON RESET -->
                 <button type="reset">Effacer</button>
                 <br/><br/>
-                <label>Afficher le nom : </label>
-                <input type="text" id="resultName1" size="10" placeholder="Résultat"/>
+                <label>Afficher le nom :</label>
+                <input type="text" id="resultName1" size="10" maxlenght="5" placeholder="Résultat" required/>
         </fieldset>
         </form>
         <!-- DÉBUT DU SCRIPT -->
@@ -110,9 +110,9 @@
             <fieldset>
                 <legend>Récupérer du texte,
                 l'affecter à une variable et l'afficher</legend>
-                <!-- CHAMP INPUT TEXTE -->
+                <!-- CHAMP  INPUT TEXTE -->
                 <label for="zonedetexte2">Saisissez plusieurs lignes de texte avec ou sans retour à la ligne : </label><br/>
-                <textarea id="zonedetexte2" row="6" cols="75" placeholder="Zone de texte"
+                <textarea id="zonedetexte2" row="10" cols="60" placeholder="Zone de texte"
                 wrap="soft"></textarea><br/>
                 <!-- BOUTON DE CALCUL -->
                 <button type="button" id="btn2">
@@ -148,7 +148,7 @@
             // var boutonDeux=document.querySelector("#btn2");
             boutonDeux.addEventListener("click", calcul2, false);
         </script>
-        <!-- LISTE DÉROULANTE ########################################### -->
+        <!-- LISTE DÉROULA NTE ########################################### -->
         <h3>Liste déroulante : select</h3>
         <form action="">
             <fieldset>
@@ -164,6 +164,7 @@
                     <option value="Saturne">Saturne</option>
                     <option value="Uranus">Uranus</option>
                     <option value="Neptune">Neptune</option>
+                    <option value="Lune">Lune</option>
                 </select><br/>
                 <!-- BOUTON DE CALCUL -->
                 <button type="button" id="btn3">
@@ -396,8 +397,8 @@
             }
             function init7() {
                 // Initialisation du formulaire
-                document.getElementById("formatCurseur7").value=10;
-                document.getElementById("suiviCurseur7").value=10;
+                document.getElementById("formatCurseur7").value="30";
+                document.getElementById("suiviCurseur7").value="30";
                 document.getElementById("resultFormatCurseur7").value="";
             }
             // Événements
@@ -418,7 +419,7 @@
             initNumber7.addEventListener("click", init7, false);
         </script>
         <h3>Date</h3>
-        <!-- CHAMP INPUT ################################################# -->
+        <!-- CHAMP DATE ################################################# -->
         <form action="">
             <fieldset>
                 <legend>Récupérer une date, l'affecter à une variable et l'afficher</legend>
@@ -449,8 +450,12 @@
             }
             function calculDate() {
                 var date=getDate();
-                displayDate(date);
-            }
+                var tms = Date.parse(date);
+                const fDate = new Date(tms);
+                var frenchDate = fDate.toLocaleDateString("fr") ;
+                
+                displayDate(frenchDate);
+            }  
             // Événement
             var boutonDate=document.getElementById("btnDate");
             // autre méthode :
