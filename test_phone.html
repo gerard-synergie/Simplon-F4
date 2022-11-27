@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <script type="text/javascript">
+      var re = /(?:\d{2}|\+\d{2}[ ]\d)([- ])\d{2}\1\d{2}\1\d{2}\1\d{2}/;
+      function testInfo(phoneInput){
+        var OK = re.exec(phoneInput.value);
+        if (!OK)
+          window.alert(phone.input + " n'est pas un numéro de téléphone valide!");
+        else
+          window.alert("Merci, votre numéro est : " + OK[0]);
+      }
+    </script>
+  </head>
+  <body>
+    <p>Saisissez votre numéro de téléphone (avec indicatif) puis cliquez sur "Vérifier".
+        <br>Le format attendu est ## ## ## ## ## ou +## # ## ## ## ##.</p>
+    <form action="#">
+      <input id="phone"><button onclick="testInfo(document.getElementById('phone'));">Vérifier</button>
+    </form>
+  </body>
+</html>

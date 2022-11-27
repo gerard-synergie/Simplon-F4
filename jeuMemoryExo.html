@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<title>Memory</title>
+<style>
+div.jeu {
+  height: 520px;
+  width:  520px;
+   margin: 2em auto 2em auto;
+ }
+ div.case {
+   height: 100px;
+   width:  100px;
+   border: 1px solid black;
+   float: left;
+   margin: 10px;
+   background-color: #9999FF;
+ }
+ img {
+   height: 100px;
+   width:  100px;
+   visibility: hidden;
+ }
+ hr {
+   clear: both;
+   visibility: hidden;
+ }
+ </style>
+ <script>
+
+/* Les variables dont on a besoin : */
+ var precedente = -1; // pour recevoir le nom de la première image cliquée
+ var attente    = 0;  // booleen (vaut 0 ou 1) pour savoir si on conserve l'état caché/visible de l'image ou pas
+ var img; //  premiere image cliquee
+ var imgp; //  deuxieme image cliquee
+ 
+ function cachephotos () {
+   
+ }
+ 
+ function clic (n) {
+  if (attente != 1) {
+       img = document.getElementById('img'+n);
+       img.style.visibility = 'visible';
+  }
+  
+}
+/*
+Math.ceil()
+
+Compatible tous navigateurs
+
+Retourne l'entier le plus proche, supérieur ou égal au nombre réel passé en paramètre.
+ceil signifie plafond en anglais.
+
+L'arrondi à l'entier inférieur est effectué par floor().
+
+L'arrondi à l'entier le plus proche est effectué par round().
+
+*/
+function initgame () {
+  
+  
+}
+</script>
+</head>
+
+<body onload="initgame();">
+
+<h1>Jeu de memory</h1>
+
+<div class="jeu">
+<div class="case" onclick="clic(1);"><img id="img1"  src="images/chat.jpg"       /></div>
+<div class="case" onclick="clic(2);"><img id="img2"  src="images/chat.jpg"       /></div>
+<div class="case" onclick="clic(3);"><img id="img3"  src="images/chien.jpg"      /></div>
+<div class="case" onclick="clic(4);"><img id="img4"  src="images/chien.jpg"      /></div>
+<hr />
+<div class="case" onclick="clic(5);"><img id="img5"  src="images/grenouille.jpg" /></div>
+<div class="case" onclick="clic(6);"><img id="img6"  src="images/grenouille.jpg" /></div>
+<div class="case" onclick="clic(7);"><img id="img7"  src="images/autruche.jpg"   /></div>
+<div class="case" onclick="clic(8);"><img id="img8"  src="images/autruche.jpg"   /></div>
+<hr />
+<div class="case" onclick="clic(9);"><img id="img9"  src="images/souris.jpg"     /></div>
+<div class="case" onclick="clic(10);"><img id="img10" src="images/souris.jpg"    /></div>
+<div class="case" onclick="clic(11);"><img id="img11" src="images/sanglier.jpg"  /></div>
+<div class="case" onclick="clic(12);"><img id="img12" src="images/sanglier.jpg"  /></div>
+<hr />
+<div class="case" onclick="clic(13);"><img id="img13" src="images/cochon.jpg"    /></div>
+<div class="case" onclick="clic(14);"><img id="img14" src="images/cochon.jpg"    /></div>
+<div class="case" onclick="clic(15);"><img id="img15" src="images/lapin.jpg"     /></div>
+<div class="case" onclick="clic(16);"><img id="img16" src="images/lapin.jpg"     /></div>
+</div>
+ 
+</body>
+</html>
