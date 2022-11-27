@@ -8,6 +8,10 @@
     /* CSS Document */
     /*######################################################"*/
     /* GÉNÉRALITÉ TOUTES PAGES */
+    .input-error{
+        outline: 1px solid red;
+    }
+
     #avertnojs {
         font-size:1.2em;
         color:hsl(0,100%,47%);
@@ -345,6 +349,10 @@
             // autre méthode :
             // var boutonSix=document.querySelector("#btn6");
             boutonSix.addEventListener("click", calcul6, false);
+            var testbox = document.getElementById("formatNumerique6").value;
+
+           
+            
         </script>
         <!-- FORMAT CURSEUR ############################################ -->
         <h3>Choisir un nombre à l'aide d'un curseur</h3>
