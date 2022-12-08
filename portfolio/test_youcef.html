@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>JS affichage image</title>
+    </head>
+     
+    <body>
+         
+        <script type="text/javascript">
+            var afficher=false; 
+            
+
+            function viewImage(id) {
+                var contenuImage= afficher ? '<div id="image"><progress value="25" max="100">'25 %'</progress>
+                </div>'; "" ;
+       
+                
+                document.getElementById(id).innerHTML=contenuImage;
+                afficher=!afficher;
+            }
+        </script>
+ 
+        <div id="bouton" onclick="javascript:viewImage('image');"> HTML </div>
+        //<div id="image">
+          //  <progress value="25" max="100">25 %</progress>
+       // </div>
+         
+    </body>
+</html>
+ 

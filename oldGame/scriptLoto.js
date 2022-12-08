@@ -1,3 +1,7 @@
+/*
+Initialisation simplement le bouton disparait, et on passe la main à la création de la grille
+*/
+
 function init(btn){
     btn.style.display="none";
     i=1;
@@ -5,6 +9,14 @@ function init(btn){
     choix=new Array();
     creerGrille();
  }
+
+/**
+ * Création de la grille. L'effet de remplissage "one by one" est obtenu grace au Timeout de 50 ms.
+ * Le bouton créé est injecté comme enfant de la grille (appendchild)
+ * le modulo 7 (%7) permet d'aller à la ligne au bout de 7 boutons 
+ * 
+ */
+
  function creerGrille(){
     t=setTimeout("creerGrille()",50);
     bouton=document.createElement("div");
@@ -24,6 +36,8 @@ function init(btn){
        clearTimeout(t);
  }
  
+// On ajoute le bouton à la liste des numeros choisis
+ 
  function ajouter(ob){
     if(nbr<6){
        ob.style.visibility="hidden";
@@ -38,6 +52,9 @@ function init(btn){
           ztirage();
     }
  }
+
+
+// le résultat nbre de bons numéros..... 
  j=0;
  function ztirage(){
     setTimeout("ztirage()",100);
@@ -54,6 +71,8 @@ function init(btn){
        }
     }
  }
+
+// Le tirage des numéros....l'effet 50 essais sur chaque numéro est otenu par le compteur itr
  index=0;
  rep=0;
  tab=new Array();

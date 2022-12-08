@@ -1,0 +1,19 @@
+script type="text/javascript">
+            var afficher=false; //permet de savoir si l'image est affichée ou non
+             
+            function viewImage(id) {
+                var contenuImage=!afficher ? "<img src='images/be-drapeau.jpg'>" : ""; //en fonction de afficher on met l'image ou non
+                afficher=!afficher;
+                //var contenuBouton=afficher ? "Cacher l'image" : "Afficher l'image" ; //On met un texte correspondant
+                 
+                document.getElementById(id).innerHTML=contenuImage;
+                //document.getElementById("bouton").innerHTML=contenuBouton;
+            }
+</script>
+ 
+        <div id="bouton" onclick="javascript:viewImage('image');"> Afficher l'image  </div>
+        <div id="image"></div>
+         
+
+
+A la place du bouton, tu mets ton image, et à la place de l'image tumets la barre de progression....
